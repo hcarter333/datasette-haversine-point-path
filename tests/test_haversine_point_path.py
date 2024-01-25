@@ -28,7 +28,7 @@ def conn():
 @pytest.mark.parametrize("type", (float, str))
 def test_haversine(conn, unit, expected, type):
     actual = conn.execute(
-        "select haversine(?, ?, ?, ?, ?)",
+        "select haversine_point_path(?, ?, ?, ?, ?, ?, ?)",
         [type(KD0FNR[0]), type(KD0FNR[1]), type(BELG[0]), type(BELG[1]), type(IONO[0]), type(IONO[1]), unit],
     ).fetchall()[0][0]
     assert expected == pytest.approx(actual)
