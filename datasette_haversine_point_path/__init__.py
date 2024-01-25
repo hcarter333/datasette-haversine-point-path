@@ -66,8 +66,23 @@ def haversine_point_path_sql(lat1, lon1, lat2, lon2, lat3, lon3, unit="km"):
     
     intersection_lat = spherical_lat(tp_x,tp_y,tp_z)
     intersection_lon = spherical_lng(tp_x,tp_y,tp_z)
-  
-    return haversine((float(lat3), float(lon3)), (float(intersection_lat), float(intersection_lon)), unit=unit)
+    perp_dist = haversine((float(lat3), float(lon3)), (float(intersection_lat), float(intersection_lon)), unit=unit)
+    tx_int = haversine((float(lat1), float(lon1)), (float(intersection_lat), float(intersection_lon)), unit=unit)
+    rx_int = haversine((float(lat2), float(lon2)), (float(intersection_lat), float(intersection_lon)), unit=unit)
+    path_dist = haversine((float(lat1), float(lon1)), (float(lat2), float(lon2)), unit=unit)
+    # should be   if(tx_int+rx_int==path_dist) 
+    # but due to rounding errors, we use: 
+    if(abs(path_dist-tx_int-rx_int) < 0.1):
+        return perp_dist
+    else:
+        tx_end = haversine((float(lat1), float(lon1)), (float(lat3), float(lon3)), unit=unit)
+        rx_end = haversine((float(lat2), float(lon2)), (float(lat3), float(lon3)), unit=unit)
+
+        if(tx_end < rx_end):
+            return tx_end
+        else:
+            return rx_end
+    
 
 
 @hookimpl
