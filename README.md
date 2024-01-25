@@ -4,7 +4,14 @@
 [![Tests](https://github.com/hcarter333/datasette-haversine-point-path/workflows/Test/badge.svg)](https://github.com/hcarter333/datasette-haversine-point-path/actions?query=workflow%3ATest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/hcarter333/datasette-haversine-point-path/blob/main/LICENSE)
 
-Datasette plugin that adds a custom SQL function for shortest haversine distances between a point and a path on a sphere
+Datasette plugin that adds a custom SQL function for shortest haversine distances between a point and a path on a sphere. The base assumption is that the sphere is the Earth.
+
+If there's a perpendicular distance from the point to the path, then that distance is returned. See the example below illustrating the paths between two different points and a path on the Earth.
+![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/0507a3a4-f6c4-4d4e-8352-4e7e37b3f066)
+
+In cases where the perpendicular distance to the path intersects with the path's great circle rather than the path itself, the distance form the point to the nearest endpoint of the path is returned,
+![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/17b4c208-c706-46ae-8a15-f88b3041d61c)
+
 
 Install this plugin in the same environment as Datasette to enable the `haversine_point_path()` SQL function.
 ```bash
