@@ -15,12 +15,13 @@ The plugin is built on top of the [haversine](https://github.com/mapado/haversin
 ## haversine_point_path() to calculate distances
 
 ```sql
-select haversine_point_path(lat1, lon1, lat2, lon2);
+select haversine_point_path(lat1, lon1, lat2, lon2, lat3, lon3);
 ```
 
 This will return the distance in kilometers between the path defined by `(lat1, lon1)`, `(lat2, lon2)`, and the point defined by `(lat3, lon3)`.
 
 ## Demo
+No demo yet
 
 ## Custom units
 
