@@ -17,12 +17,12 @@ def conn():
 @pytest.mark.parametrize(
     "unit,expected",
     (
-        ("ft", 1120114.909),
-        ("m", 341411.024),
-        ("in", 13441378.915),
-        ("mi", 1099),
-        ("nmi", 184.3472),
-        ("km", 341.411),
+        ("ft", 5805047),
+        ("m", 1769378.36),
+        ("in", 69660567),
+        ("mi", 1099.44),
+        ("nmi", 955.39),
+        ("km", 1769.38),
     ),
 )
 @pytest.mark.parametrize("type", (float, str))
