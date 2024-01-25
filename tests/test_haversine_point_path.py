@@ -1,4 +1,4 @@
-from datasette_haversine import prepare_connection
+from datasette_haversine_point_path import prepare_connection
 import sqlite3
 import pytest
 
