@@ -36,15 +36,15 @@ def spherical_lng(x,y,z):
     return (math.atan2(y, x)*rad2deg) # return degrees
   
 def haversine_point_path_sql(lat1, lon1, lat2, lon2, lat3, lon3, unit="km"):
-    tx_x = cartesian_x(lat1,lon1)
-    tx_y = cartesian_y(lat1,lon1)
-    tx_z = cartesian_z(lat1,lon1)
-    rx_x = cartesian_x(lat2,lon2)
-    rx_y = cartesian_y(lat2,lon2)
-    rx_z = cartesian_z(lat2,lon2)
-    c_x = cartesian_x(lat3,lon3)
-    c_y = cartesian_y(lat3,lon3)
-    c_z = cartesian_z(lat3,lon3)
+    tx_x = cartesian_x(float(lat1),float(lon1))
+    tx_y = cartesian_y(float(lat1),float(lon1))
+    tx_z = cartesian_z(float(lat1),float(lon1))
+    rx_x = cartesian_x(float(lat2),float(lon2))
+    rx_y = cartesian_y(float(lat2),float(lon2))
+    rx_z = cartesian_z(float(lat2),float(lon2))
+    c_x = cartesian_x(float(lat3),float(lon3))
+    c_y = cartesian_y(float(lat3),float(lon3))
+    c_z = cartesian_z(float(lat3),float(lon3))
 
     #The plane containing the path
     g_x = cross_x(tx_x, tx_y, tx_z, rx_x, rx_y, rx_z)
