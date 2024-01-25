@@ -1,8 +1,8 @@
 # datasette-haversine-point-path
 [![PyPI](https://img.shields.io/pypi/v/datasette-haversine-point-path.svg)](https://pypi.org/project/datasette-haversine-point-path/)
-[![Changelog](https://img.shields.io/github/v/release/simonw/datasette-haversine-point-path?include_prereleases&label=changelog)](https://github.com/simonw/datasette-haversine-point-path/releases)
-[![Tests](https://github.com/simonw/datasette-haversine/workflows/Test/badge.svg)](https://github.com/simonw/datasette-haversine-point-path/actions?query=workflow%3ATest)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/simonw/datasette-haversine-point-path/blob/main/LICENSE)
+[![Changelog](https://img.shields.io/github/v/release/hcarter333/datasette-haversine-point-path?include_prereleases&label=changelog)](https://github.com/hcarter333/datasette-haversine-point-path/releases)
+[![Tests](https://github.com/hcarter333/datasette-haversine/workflows/Test/badge.svg)](https://github.com/hcarter333/datasette-haversine-point-path/actions?query=workflow%3ATest)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/hcarter333/datasette-haversine-point-path/blob/main/LICENSE)
 
 Datasette plugin that adds a custom SQL function for shortest haversine distances between a point and a path on a sphere
 
