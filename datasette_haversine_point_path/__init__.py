@@ -69,5 +69,5 @@ def haversine_point_path_sql(lat1, lon1, lat2, lon2, lat3, lon3, unit="km"):
 
 @hookimpl
 def prepare_connection(conn):
-    conn.create_function("haversine", 4, haversine_point_path_sql)
-    conn.create_function("haversine", 5, haversine_point_path_sql)
+    conn.create_function("haversine", 6, haversine_point_path_sql)
+    conn.create_function("haversine", 7, haversine_point_path_sql)
