@@ -2,6 +2,8 @@ from datasette import hookimpl
 from haversine import haversine
 import math
 
+deg2rad = math.pi/180
+rad2deg = 180/math.pi
 
 def cartesian_x(f,l):
     #f = latitude, l = longitude
