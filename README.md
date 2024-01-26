@@ -6,8 +6,10 @@
 
 Datasette plugin that adds a custom SQL function for shortest haversine distances between a point and a path on a sphere. The base assumption is that the sphere is the Earth.
 
-If there's a perpendicular distance from the point to the path, then that distance is returned. See the example below illustrating the shortest distances between two different points and a path traced along the Earth shown in yellow. The shortest distance between each of the points and the path form perpendicular lines to the path (in this case) that intersect at the blue markers on the path that traces from the bottom-left of the image towards the top-right in the Googel Earth image. 
-![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/0507a3a4-f6c4-4d4e-8352-4e7e37b3f066)
+If a perpendicular line can be drawn from the point to the path, then the distance along that line is the shortest distance between the point and the path and is the value that is returned. The following Google Earth image illustrates this case. It shows perpendicular white lines between two different points, (blue markers), and a path, (yellow line). The white lines denote the shorest distance and intersect with the path at the locations shown by the green markers. 
+
+![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/f9b28929-28c0-41f8-aff6-61e5df788070)
+
 
 In cases where the perpendicular distance to the path intersects with the path's great circle rather than the path itself, the distance form the point to the nearest endpoint of the path is returned, in the example below, the pink line is the perpendicular distance from the point to the great circle that contains the path of interest, but since it doesn't intersect the path of interest, it's does not represent the shortest distance between the point and the path (the yellow line denotes the path of interest.) In this special case, the green line between the point and the nearest endpoint of the path is the correct anser. It is that distance that is returned by haversine_point_path. 
 
