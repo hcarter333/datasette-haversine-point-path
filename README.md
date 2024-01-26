@@ -9,8 +9,9 @@ Datasette plugin that adds a custom SQL function for shortest haversine distance
 If there's a perpendicular distance from the point to the path, then that distance is returned. See the example below illustrating the paths between two different points and a path on the Earth.
 ![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/0507a3a4-f6c4-4d4e-8352-4e7e37b3f066)
 
-In cases where the perpendicular distance to the path intersects with the path's great circle rather than the path itself, the distance form the point to the nearest endpoint of the path is returned,
-![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/17b4c208-c706-46ae-8a15-f88b3041d61c)
+In cases where the perpendicular distance to the path intersects with the path's great circle rather than the path itself, the distance form the point to the nearest endpoint of the path is returned, in the example below, the pink line is the perpendicular distance from the point to the great circle that contains the path of interest, but since it doesn't intersect the path of interest, it's does not represent the shortest distance between the point and the path (the yellow line denotes the path of interest.) In this special case, the green line between the point and the nearest endpoint of the path is the correct anser. It is that distance that is returned by haversine_point_path. 
+![image](https://github.com/hcarter333/datasette-haversine-point-path/assets/363004/7237d7e0-150f-412a-bf5f-8ba6ac1c84f9)
+
 
 
 Install this plugin in the same environment as Datasette to enable the `haversine_point_path()` SQL function.
